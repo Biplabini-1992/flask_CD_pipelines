@@ -1,24 +1,23 @@
-# Use Python 3.10 slim image
-FROM python:3.10-slim-bookworm
+FROM python:3.9-slim-buster
 
-# Set the working directory in the container
-WORKDIR /flask-loan-app
+# Set the working directory to /app
 
-# Copy requirements file
+WORKDIR /flask-loan-app 
+# this is the directory inside the container
+
+
+RUN python3 -m pip install --upgrade pip
+
 COPY requirements.txt requirements.txt
 
-# Install dependencies
 RUN pip3 install -r requirements.txt
 
-# Copy all application files into the container
 COPY . .
+# copy ../../flsk-folder/ .
+# Copy everything from the current directory to the PWD (Present Working Directory) inside the container
 
-# Define the command to run the Flask app
-CMD ["python", "-m", "flask", "--app", "loan_app.py", "run", "--host=0.0.0.0", "--port=8000"]
+# CMD [ "python3", "flask", "run", "--host=0.0.0.0"] 
 
-# docker build -t ano .
-# docker image ls
-# docker container ls --all
-# docker tag ano biplabinipadhi/mlops_docker:latest      
-# docker push biplabinipadhi/mlops_docker:latest
+# python3 flask --app app.py run
+CMD ["python", "-m","flask", "--app", "hello.py", "run", "--host=0.0.0.0", "--port=8000"]
 
