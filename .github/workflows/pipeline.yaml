@@ -43,6 +43,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: biplabinipadhi1992/first-action:latest
+          tags: biplabinipadhi92/first-action:latest
 
           
