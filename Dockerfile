@@ -5,7 +5,7 @@ FROM python:3.10-slim-bookworm
 WORKDIR /flask-loan-app
 
 # Copy requirements file
-COPY requirements.txt .
+COPY requirements.txt requirements.txt
 
 # Install dependencies
 RUN pip3 install -r requirements.txt
