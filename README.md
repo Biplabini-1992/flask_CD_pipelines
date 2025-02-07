@@ -1,2 +1,2 @@
-# flask_CD_pipelines
- creating CD pipelines
+# flask_app
+ creating flask web api for loan price prediction.
