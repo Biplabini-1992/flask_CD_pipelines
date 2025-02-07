@@ -42,5 +42,6 @@ jobs:
       - name: Build Docker Image and push to DockerHub
         uses: docker/build-push-action@v6
         with:
+          context: flask_CD_pipelines   # <-- Set the correct build context
           push: true
           tags: biplabinipadhi/first-action:latest
